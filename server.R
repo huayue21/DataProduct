@@ -17,9 +17,7 @@ shinyServer(
       g1 <- g1 + geom_density(size = 1,color = 'blue')
       g1 <- g1 + geom_vline(xintercept = mean(df$x),size = 1,color='blue')
       g1 <- g1 + geom_vline(xintercept = 1/lambda,size = 1,color = 'red',linetype = "longdash")
-      #g1 <- g1 + annotate("mu = ", x = 8, y = .4, label = mean(df$x)))
-      #text(8, .4, paste("mu = ", mean(df$x)))
-      #text(6, .5, paste("CLT.mean = ",1/lambda ))
+     
       x.norm <- seq(min(df), max(df),length=100)
       y.norm <- dnorm(x.norm, 1/lambda, (1/lambda)/sqrt(n))
       dat.norm <- data.frame(x.norm,y.norm)
